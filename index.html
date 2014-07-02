@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!--
+    Created on : 11.05.2014, 12:45:15
+    Author     : danielkuenkel
+    Mail       : daniel.kuenkel@informatik.hs-fulda.de
+-->
+
+<html>
+    <head>
+        <title>GestureSimulator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/runtime.js"></script>
+        <script src="js/leap-0.5.0.min.js"></script>
+        <!--<script src="js/leap-0.6.0-beta2.min.js"></script>-->
+        <script src="js/leaptrainer.min.js"></script>
+        <script src="js/gsap/minified/TweenMax.min.js"></script>
+
+    </head>
+    <body onload="onPageLoaded()">
+        <audio id="audio-error" src="audio/Fehler.mp3" preload="auto"></audio>
+        <audio id="audio-startAnesthesia" src="audio/Anästhesiebeginn.mp3" preload="auto"></audio>
+        <audio id="audio-intubation" src="audio/Intubation.mp3" preload="auto"></audio>
+        <audio id="audio-releaseAnaesthesie" src="audio/Freigabe Anästhesie.mp3" preload="auto"></audio>
+        
+        
+        <div id="infoFrame" onclick="onCloseInfoClick()">
+            <input id="buttonCloseInfo" type="submit" value="" onclick="onCloseInfoClick()" />
+            <div id="infoContent">This is a project of a master student from <br/>Hochschule Fulda - University of Applied Sciences. <br/><br/>
+                <img src="img/logoFuldaWhite.png" width="308" height="308" alt="logoFuldaWhite"/><br/><br/>
+                This prototype is designed to test the <br/>identified gestures for the anesthesia workstation.<br/><br/>
+                Please make sure that the Leap Motion &#8482; software is <br/>installed and running in the background. <br/>
+                A Leap Motion Controller should be connected to the computer. <br/>The settings for the web app support should be enabled.
+            </div>
+        </div>
+        <input id="buttonInfo" type="submit" value="" onclick="onInfoClick()" />
+        
+
+        <div id="mainFrame">
+            <div id="contentFrame" class="statusText"></div>
+            <div id="footer">
+                <div id="footerLogoLeft">
+                    <img src="img/logoLeap.jpg" width="101" height="50" alt="Leap Motion (TM)"/>
+                </div>
+                <div id="footerButtons">
+                    <input id="buttonSimulation" type="submit" value="" onclick="onSimulationToggleClick()" />
+                    <!--<div class="footerSeperator"></div>-->
+                    <div class="footerText">anesthesia: </div>
+                    <input id="buttonPosen" type="submit" value="" onclick="onPosesClick()" />
+<!--                    <input id="buttonMotion" type="submit" value="" onclick="onMotionClick()" />-->
+                    <div class="footerText">leap motion &#8482;:</div>
+                    <input id="buttonStandard" type="submit" value="" onclick="onStandardClick()" />
+                </div>
+                <div id="footerLogoRight">
+                    <img src="img/logoFulda.png" width="50" height="50" alt="Hochschule Fulda - University of Applied Sciences"/>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
